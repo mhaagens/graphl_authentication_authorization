@@ -23,7 +23,7 @@ const mockPosts = [
 
 module.exports.postDefs = gql`
   extend type Query {
-    posts: [Post] @requireAuth(role: ADMIN)
+    posts: [Post] @requireAuth
   }
   type Post {
     id: Int
