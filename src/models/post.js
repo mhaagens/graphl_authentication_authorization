@@ -18,12 +18,20 @@ const mockPosts = [
     title:
       "Did you hear about the mathematician who’s afraid of negative numbers? He'll stop at nothing to avoid them.",
     ownerId: 1
+  },
+  {
+    id: 4,
+    title:
+      "There are 10 types of people in this world, those who understand binary and those who dont.",
+    ownerId: 3
   }
 ];
 
 module.exports.postDefs = gql`
+  directive @requireAuth(role: [Role]) on FIELD_DEFINITION
+
   extend type Query {
-    posts: [Post] @requireAuth
+    posts: [Post] @requireAuth(role: USER)
   }
   type Post {
     id: Int

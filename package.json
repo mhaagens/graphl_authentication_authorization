@@ -10,9 +10,9 @@
   "author": "Martin Haagensli <martin.haagensli@gmail.com> (https://twitter.com/mhaagens)",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.0.0-rc.5",
-    "graphql": "^0.13.2",
-    "lodash": "^4.17.10"
+    "apollo-server": "^2.1.0",
+    "graphql": "^14.0.2",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"

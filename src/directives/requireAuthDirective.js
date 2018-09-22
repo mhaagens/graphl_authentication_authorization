@@ -9,12 +9,12 @@ class RequireAuthDirective extends SchemaDirectiveVisitor {
     const { role } = this.args;
     field.resolve = async function(...args) {
       const [, , ctx] = args;
-      if (ctx.req && ctx.req.user) {
-        if (role && (!ctx.req.user.role || !ctx.req.user.role.includes(role))) {
+      if (ctx.req && ctx.req.user) {          
+        if (role && (!ctx.req.user.role || !ctx.req.user.role.includes(role[0]))) {
           throw new AuthenticationError(
             "You are not authorized to view this resource."
           );
-        } else {
+        } else {            
           const result = await resolve.apply(this, args);
           return result;
         }
